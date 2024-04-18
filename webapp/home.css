@@ -1,0 +1,89 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f7fd; /* Azzurro chiaro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Intestazione */
+header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    max-width: 50px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 10px;
+    color: #333; /* Nero */
+}
+
+/* Barra di navigazione */
+nav {
+    background-color: #000000; /* Azzurro scuro */
+    padding: 5px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #f4f4f4;
+}
+
+/* Contenuto principale */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    margin-bottom: 10px;
+    color: #060606; /* Azzurro scuro */
+}
+
+.container p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #0e0e0e; /* Azzurro scuro */
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
