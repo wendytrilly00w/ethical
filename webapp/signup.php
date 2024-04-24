@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $new_user_id = $conn->insert_id;
 
             // Imposta il cookie con l'ID dell'utente
-         setcookie('user_id', $new_user_id, time() + (86400 * 30), "/"); // Cookie valido per 30 giorni
+         setcookie('id_user', $new_user_id, time() + (86400 * 30), "/"); // Cookie valido per 30 giorni
 
     // Dopo che la registrazione è avvenuta con successo
     header("Location: homepage.html");

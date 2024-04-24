@@ -1,4 +1,7 @@
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
   
-    <h1>Hi Admin! Here there are some user's comments </h1>
+   
 
-    <link rel="stylesheet" href="admin.css">
-    <a href="logout.php">Logout</a> <!-- Aggiungiamo il link per il logout -->
+    <link rel="stylesheet" href="css/admin.css">
+    <a href="logout.php">Logout</a>
+
+  
     <style>
         body {
             background-image: url('yellow.jpg'); /* Percorso dell'immagine di sfondo */
@@ -20,8 +25,8 @@
 </head>
 <body>
     <div class="container">
-        <h2>Comments</h2>
-        <div class="comments">
+        
+        <div class="comments">+
         <?php
         // Include il file di connessione al database
         require "connectiondb.php";

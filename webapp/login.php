@@ -1,6 +1,6 @@
 
 <?PHP session_start(); 
-if (isset($_COOKIE['user_id']) && $_COOKIE['user_id'] == -1) {
+if (isset($_COOKIE['id_user']) && $_COOKIE['id_user'] == -1) {
     // Reindirizza direttamente alla pagina admin.php
     header("Location: admin.php");
 
@@ -14,6 +14,7 @@ if (isset($_COOKIE['user_id']) && $_COOKIE['user_id'] == -1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
+
     <style>
         body {
             background-image: url('a.jpg'); /* Percorso dell'immagine di sfondo */
@@ -25,14 +26,24 @@ if (isset($_COOKIE['user_id']) && $_COOKIE['user_id'] == -1) {
 <body>
 <div class="container">
     <h2>Login</h2>
+    
     <form action="login.php" method="post">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username"><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password"><br><br>
+
+        
        
         <input type="submit" value="Login" name="login">
         <p>Don't have an account? <a href="signup.php">Signup here</a></p>
+
+   
+    
+        <p><img src="./captcha.php" /></p>
+          <label>CAPTCHA <input type="text" name="captcha" /><br><br> 
+            <input type="submit" name="submit">
+
     </form>
     <?php
   
@@ -61,12 +72,9 @@ $conn = connectToDatabase("localhost", "root", "", "job");
     if (!empty($username) && !empty($password)) {
 
         if ($username === ADMIN_USERNAME && $password === ADMIN_PASSWORD) {
-            setcookie('user_id', -1, time() + (86400 * 30), "/"); // Cookie valido per 30 giorni
+            setcookie('id_user', -1, time() + (86400 * 30), "/"); // Cookie valido per 30 giorni
             header("Location: admin.php");
         }
-
-    
-    
 
         
 
@@ -87,11 +95,11 @@ $conn = connectToDatabase("localhost", "root", "", "job");
         $id_user = $row['id'];
 
         // Memorizza l'ID dell'utente nella sessione
-        $_SESSION['user_id'] = $id_user;
+        $_SESSION['id_user'] = $id_user;
 
 
         // Imposta il cookie con l'ID dell'utente
-        setcookie('user_id', $id_user, time() + (86400 * 30), "/"); // Cookie valido per 30 giorni
+        setcookie('id_user', $id_user, time() + (86400 * 30), "/"); // Cookie valido per 30 giorni
 
 
         

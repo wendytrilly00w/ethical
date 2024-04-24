@@ -5,9 +5,9 @@ session_start();
 // Distrugge tutte le variabili di sessione
 $_SESSION = array(); // Svuota l'array delle sessioni
 
-if (isset($_COOKIE['user_id'])) {
-    unset($_COOKIE['user_id']); 
-    setcookie('user_id', '', -1, '/'); 
+if (isset($_COOKIE['id_user'])) {
+    unset($_COOKIE['id_user']); 
+    setcookie('id_user', '', -1, '/'); 
 } 
 // Cancella il cookie di sessione
 if (ini_get("session.use_cookies")) {
@@ -24,10 +24,23 @@ if (ini_get("session.use_cookies")) {
 // Distrugge la sessione
 session_destroy();
 
+
+
+
 // Rigenera l'ID di sessione
 session_regenerate_id(true);
 
+
 // Reindirizza l'utente alla pagina di login o ad altre pagine
 header("Location: login.php"); // Cambia "login.php" con il percorso della tua pagina di login
+
+
+
+
+
 exit();
+
+
+
+
 ?>
